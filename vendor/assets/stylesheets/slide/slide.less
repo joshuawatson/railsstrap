@@ -1,0 +1,184 @@
+
+// Slide
+//
+
+@slide-duration: .3s;
+@slide-timing-function: ease-in-out;
+
+.slide-top {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.slide-top-add, &.hide-remove, &.move {
+    animation-name: slideFromTop;
+  }
+  &.slide-top-remove, &.hide {
+    animation-name: slideToTop;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: slideFromTop;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: slideToTop;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.slide-right {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.slide-right-add, &.hide-remove, &.move {
+    animation-name: slideFromRight;
+  }
+  &.slide-right-remove, &.hide {
+    animation-name: slideToRight;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: slideFromRight;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: slideToRight;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.slide-bottom {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.slide-bottom-add, &.hide-remove, &.move {
+    animation-name: slideFromBottom;
+  }
+  &.slide-bottom-remove, &.hide {
+    animation-name: slideToBottom;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: slideFromBottom;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: slideToBottom;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.slide-left {
+
+  animation-duration: @slide-duration;
+  animation-timing-function: @slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.slide-left-add, &.hide-remove, &.move {
+    animation-name: slideFromLeft;
+  }
+  &.slide-left-remove, &.hide {
+    animation-name: slideToLeft;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: slideFromLeft;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: slideToLeft;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+
+// Keyframes
+//
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideToTop {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes slideToRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideToBottom {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideToLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}

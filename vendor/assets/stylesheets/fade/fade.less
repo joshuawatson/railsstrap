@@ -1,0 +1,92 @@
+// Fade
+//
+
+@fade-duration: .3s;
+@fade-timifunction: linear;
+
+.am-fade {
+
+  animation-duration: @fade-duration;
+  animation-timifunction: @fade-timifunction;
+  animation-fill-mode: backwards;
+  opacity: 1;
+
+  &.am-fade-add, &.hide-remove, &.move  {
+    animation-name: fadeIn;
+  }
+  &.am-fade-remove, &.hide {
+    animation-name: fadeOut;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: fadeIn;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: fadeOut;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+
+// Keyframes
+//
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+// Bootstrap 3
+//
+
+.tab-pane {
+
+  &.am-fade {
+
+    &.active-remove {
+      display: none !important;
+    }
+    &.active-add {
+      animation-name: fadeIn;
+    }
+
+  }
+
+}
+
+.modal-backdrop, .aside-backdrop {
+
+  &.fade {
+
+    background: rgba(0, 0, 0, .5);
+    animation-duration: @fade-duration / 2;
+    &.leave {
+      animation-delay: @fade-duration;
+    }
+
+  }
+
+}

@@ -25,6 +25,7 @@ module Railsstrap
       [Railsstrap::BootstrapFlashHelper,
        Railsstrap::FormErrorsHelper,
        Railsstrap::ModalHelper,
+       Railsstrap::AsideHelper,
        Railsstrap::GlyphHelper,
        Railsstrap::IconHelper,
        Railsstrap::NavbarHelper,

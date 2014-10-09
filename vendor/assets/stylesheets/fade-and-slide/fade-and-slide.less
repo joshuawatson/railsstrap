@@ -1,0 +1,218 @@
+
+// Fade & Slide
+//
+
+@fade-and-slide-duration: .3s;
+@fade-and-slide-timing-function: ease-in-out;
+
+.fade-and-slide-top {
+
+  animation-duration: @fade-and-slide-duration;
+  animation-timing-function: @fade-and-slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.fade-and-slide-top-add, &.hide-remove, &.move {
+    animation-name: fadeAndSlideFromTop;
+  }
+  &.fade-and-slide-top-remove, &.hide {
+    animation-name: fadeAndSlideToTop;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromTop;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: fadeAndSlideToTop;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.fade-and-slide-right {
+
+  animation-duration: @fade-and-slide-duration;
+  animation-timing-function: @fade-and-slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.fade-and-slide-right-add, &.hide-remove, &.move {
+    animation-name: fadeAndSlideFromRight;
+  }
+  &.fade-and-slide-right-remove, &.hide {
+    animation-name: fadeAndSlideToRight;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromRight;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: fadeAndSlideToRight;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.fade-and-slide-bottom {
+
+  animation-duration: @fade-and-slide-duration;
+  animation-timing-function: @fade-and-slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.fade-and-slide-bottom-add, &.hide-remove, &.move {
+    animation-name: fadeAndSlideFromBottom;
+  }
+  &.fade-and-slide-bottom-remove, &.hide {
+    animation-name: fadeAndSlideToBottom;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromBottom;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: fadeAndSlideToBottom;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.fade-and-slide-left {
+
+  animation-duration: @fade-and-slide-duration;
+  animation-timing-function: @fade-and-slide-timing-function;
+  animation-fill-mode: backwards;
+
+  &.fade-and-slide-left-add, &.hide-remove, &.move {
+    animation-fill-mode: backwards;
+    animation-name: fadeAndSlideFromLeft;
+  }
+  &.fade-and-slide-left-remove, &.hide {
+    animation-name: fadeAndSlideToLeft;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: fadeAndSlideFromLeft;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: fadeAndSlideToLeft;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+
+// Keyframes
+//
+
+@keyframes fadeAndSlideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAndSlideToTop {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
+
+@keyframes fadeAndSlideFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeAndSlideToRight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+@keyframes fadeAndSlideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAndSlideToBottom {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+}
+
+@keyframes fadeAndSlideFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAndSlideToLeft {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}

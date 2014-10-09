@@ -1,0 +1,111 @@
+// Fade
+//
+
+@flip-duration: .4s;
+@flip-timing-function: ease;
+
+.flip-x {
+
+  animation-duration: @flip-duration;
+  animation-timing-function: @flip-timing-function;
+  animation-fill-mode: backwards;
+
+  &.flip-x-add, &.hide-remove, &.move {
+    animation-name: flipInXBounce;
+  }
+  &.flip-x-remove, &.hide {
+    animation-name: flipOutX;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: flipInXBounce;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: flipOutX;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+.flip-x-linear {
+
+  animation-duration: @flip-duration;
+  animation-timing-function: @flip-timing-function;
+  animation-fill-mode: backwards;
+
+  &.flip-x-add, &.hide-remove, &.move {
+    animation-name: flipInX;
+  }
+  &.flip-x-remove, &.hide {
+    animation-name: flipOutX;
+  }
+
+  &.enter {
+    visibility: hidden;
+    animation-name: flipInX;
+    animation-play-state: paused;
+    &.enter-active {
+      visibility: visible;
+      animation-play-state: running;
+    }
+  }
+  &.leave {
+    animation-name: flipOutX;
+    animation-play-state: paused;
+    &.leave-active {
+      animation-play-state: running;
+    }
+  }
+
+}
+
+// Keyframes
+//
+
+@keyframes flipInX {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes flipInXBounce {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+  40% {
+    transform: perspective(400px) rotateX(-10deg);
+  }
+  70% {
+    transform: perspective(400px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes flipOutX {
+  from {
+    opacity: 1;
+    transform: perspective(400px) rotateX(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: perspective(400px) rotateX(90deg);
+  }
+}
